@@ -1,0 +1,85 @@
+.filter-div {
+    border-top: 1px solid var(--grey);
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    background: whitesmoke;
+    position: relative;
+  }
+  .slider-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* for iOS momentum scrolling */
+    scrollbar-width: none; /* hide scrollbar in Firefox */
+    -ms-overflow-style: none; /* hide scrollbar in IE and Edge */
+  }
+  
+  .slider-container::-webkit-scrollbar {
+    display: none; /* hide scrollbar in Chrome and Safari */
+  }
+  .arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: black;
+    outline: none;
+  }
+  
+  .left {
+    left: 0;
+    /* position: fixed; */
+  }
+  
+  .right {
+    right: 0;
+    /* position: relative; */
+  }
+  
+  
+  .links-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    opacity: 0.5;
+    border-bottom: 1px solid var(--white);
+    min-width: 85px;
+    cursor: pointer;
+  }
+  
+  .links-box:hover,
+  .selected-box {
+    opacity: 1;
+    border-bottom: 1px solid var(--black);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .links-img {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+  }
+  
+  .links-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--font-grey);
+  }
+  
+  .selected-label {
+    color: var(--black);
+  }
+  @media only screen and (max-width: 800px) {
+    .filter-div {
+      padding: 0.5rem;
+    }
+  }
