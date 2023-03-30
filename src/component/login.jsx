@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Grid,Paper,Avatar, TextField, Button, Typography,Link } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 import { useNavigate } from "react-router-dom";
 
 export const Login = ({auth,setAuth}) => {
-    
+    const [alert, setalert] = useState(false);
     const paperStyle={padding :20,height:'65vh',width:280, margin:"auto"}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
@@ -49,7 +49,8 @@ export const Login = ({auth,setAuth}) => {
         setTimeout(() => {
             props.resetForm()
             props.setSubmitting(false)
-        }, 2000)
+            setalert(true);
+        }, 500)
 
     }
   return (
@@ -84,8 +85,9 @@ export const Login = ({auth,setAuth}) => {
                 <Typography >
                      <Link href="#" >
                         Forgot password ?
-                </Link>
+                    </Link>
                 </Typography>
+                {alert && <Typography style={{color:'red', textAlign:'center',marginTop:'15px'}}> Invalid Sign In!</Typography>}
         </Paper>
     </div>
   )
